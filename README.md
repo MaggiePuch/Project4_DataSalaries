@@ -4,26 +4,26 @@ The goal of this project is to predict the salaries of individuals entering the 
 
 ## Results - 
 * Data Preprocessing
-  * List things we updated : The target variable selected for the model is the salary. We attempted to do this using both the 'salary_in_usd' column and a created 'salary_binned' column. When we created the salary_binned column, the bins are as followes:
-    * Bin 1: 40000.0 - 132000.0
-    * Bin 2: 132000.0 - 224000.0
-    * Bin 3: 224000.0 - 316000.0
-    * Bin 4: 316000.0 - 408000.0
-    * Bin 5: 408000.0 - 500000.0
-  * List more things : The features chosen for the model include all columns from the dataset except for the IS_SUCCESSFUL column which include:  APPLICATION_TYPE, AFFILIATION, CLASSIFICATION, USE_CASE, ORGANIZATION, STATUS, INCOME_AMT, SPECIAL_CONSIDERATIONS, and ASK_AMT. These features provide valuable information that the model will utilize to make predictions
-  * List more things: Several variables were identified for removal from the input data as they are neither targets nor features. These variables include the EIN and NAME columns, which are identifiers with no predictive value. Additionally, preprocessing steps were applied to the APPLICATION_TYPE and CLASSIFICATION columns. For APPLICATION_TYPE, values with frequencies below 500 were grouped into an 'OTHER' category to reduce dimensionality and improve model performance. Similarly, for CLASSIFICATION, categories with frequencies under 1800 were aggregated into an 'other' category to enhance the model's predictive capabilities.
+  * The target variable selected for the model is the salary. We attempted to do this using both the 'salary_in_usd' column and a created 'salary_binned' column. When we created the salary_binned column, the bins are as followes:
+    * Bin 1: 40000 - 132000
+    * Bin 2: 132000 - 224000
+    * Bin 3: 224000 - 316000
+    * Bin 4: 316000 - 408000
+    * Bin 5: 408000 - 500000
+  * The features chosen for the model include the following columns:  experience_level, job_title, employee_residence and company_size.
+  * Several variables were identified for removal from the input data as they are neither targets nor features. These variables include the 'salary_currency', 'company_location' and the extra 'salary' column as they were identified as having no predictive value. Preprocessing steps included dropping rows with 'work)year' > 2022, trimming the 'salary_in_usd' column to remove outliers, reallocating 'remote_ratio' workers that are 50 (hybred) to 100 (office), updating 'job_title' and 'employee_residence' so values with frequencies below 500 were grouped into an 'OTHER' category to reduce dimensionality and improve model performance
 * Compiling, Training, and Evaluating the Original Model
   * How many neurons, layers, and activation functions did you select for your neural network model, and why?
-   * UPDATE Number of Neurons: The first hidden layer (layer_1) contains 80 neurons, and the second hidden layer (layer_2) contains 30 neurons.
-   * UPDATE Number of Layers: The model consists of two hidden layers and one output layer, resulting in a total of three layers.
-   * UPDATE Activation Functions: Both hidden layers utilize the ReLU (Rectified Linear Unit) activation function, while the output layer employs the sigmoid activation function.
-* Were you able to achieve the target model performance?
-  * UPDATE THIS No, I was not able to achieve the target model performance of over 75% accuracy. Despite making several optimization attempts, the model's accuracy remained below the desired threshold. My best-performing model achieved an accuracy of approximately 72%, still short of the target. The optimization attempts yielded the following results: Optimization 1 - Loss: 0.574, Accuracy: 0.721. Optimization 2 - Loss: 0.572, Accuracy: 0.720. Optimization 3 - Loss: 0.582, Accuracy: 0.719. While the models showed improvement during optimization, they still did not reach the desired level of accuracy. Further analysis and experimentation may be required to identify additional strategies for enhancing model performance.
+   * Number of Neurons: The first hidden layer (layer_1) contains 128 neurons, and the second hidden layer (layer_2) contains 64 neurons.
+   * Number of Layers: The model consists of two hidden layers and one output layer, resulting in a total of three layers.
+   * Activation Functions: Both hidden layers utilize the ReLU (Rectified Linear Unit) activation function, while the output layer employs the softmax activation function.
+* Were you able to achieve the 75% or greater on your model?
+  * No, we were not able to achieve an accuracy over 75%. Despite making several optimization attempts, the model's accuracy remained below the desired threshold. Our first attempts achieved an accuracy of approximately 42%. The optimization attempts yielded the following results: Optimization 1 - Loss: , Accuracy: . Optimization 2 - Loss: , Accuracy: . Optimization 3 - Loss: , Accuracy: . While the models showed improvement over time, they still did not reach the desired level of accuracy. 
 * What steps did you take in your attempts to increase model performance?
-  * UPDATE THIS In attempts to enhance model performance, I made several modifications. Initially, I refined the dataset by removing additional columns ('USE_CASE', 'STATUS', 'SPECIAL_CONSIDERATIONS') and adjusted the cutoff values for 'application_type' and 'classification'. In Optimization 1, I increased the units in the first and second hidden layers and updated the training epochs to 50. For Optimization 2, I introduced a third hidden layer and switched the optimizer to 'sgd'. In Optimization 3, I added a fourth layer with updated units and changed the activation functions of the third and fourth layers to 'ELU'. Additionally, I reverted the optimizer to 'adam' and extended the training epochs to 100.
+  * UPDATE THIS In attempts to enhance model performance, we made several modifications. Initially, WHAT DID WE TRY? Attempted to NORMALIZE but didnt work ended up with 100% accuracy, over fit the model. Ran the FOREST(?) and got some results. Finally called it after attempted to use the unaltered 'salary' and received a 0.0000e00 accuracy.
 
 ## Summary 
-UPDATE THIS The deep learning model showed moderate performance in classifying the dataset, achieving an accuracy of approximately 72%. While this accuracy indicates some success, it falls short of the desired 75%. Despite multiple optimization attempts, including adjustments to model architecture, dataset preprocessing, and training parameters, the desired accuracy level was not attained. To address this problem more effectively, I recommend exploring a boosting algorithm, such as XGBoost or LightGBM. Boosting algorithms are known to help the performance in handling tabular data classification tasks. They capture complex relationships in the data, handling categorical variables effectively, and mitigating overfitting through ensemble techniques. By leveraging the strengths of a boosting algorithms, we can potentially achieve higher classification accuracy and enhance predictive performance in this scenario.
+In conclusion, while our model provides a foundation for predicting salaries in the data industry, we recognize the need for additional data to enhance its accuracy and robustness. Despite the dataset's size, we believe that the model's accuracy could be significantly improved with more granular and comprehensive data, particularly from specific states or regions. We found that the lack of data diversity may have led to bias and limited the model's ability to generalize well to unseen data. Future efforts will focus on acquiring more data, especially from specific states or regions, to better capture the variability in salaries within the data industry. We remain optimistic that with a more extensive and diverse dataset, our model can achieve higher accuracy and better serve its intended purpose of assisting individuals in understanding and negotiating salaries in the data field.
 
 ### Reference 
 The Global AI, ML, Data Science Salary Index for 2024. (2024, March). Retrieved from [https://ai-jobs.net/salaries/download/]

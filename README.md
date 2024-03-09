@@ -13,7 +13,6 @@ The goal of this project is to predict the salaries of individuals entering the 
   * The features chosen for the model include the following columns:  experience_level, job_title, employee_residence and company_size.
   * Several variables were identified for removal from the input data as they are neither targets nor features. These variables include the 'salary_currency', 'company_location' and the extra 'salary' column as they were identified as having no predictive value. Preprocessing steps included dropping rows with 'work)year' > 2022, trimming the 'salary_in_usd' column to remove outliers, reallocating 'remote_ratio' workers that are 50 (hybred) to 100 (office), updating 'job_title' and 'employee_residence' so values with frequencies below 500 were grouped into an 'OTHER' category to reduce dimensionality and improve model performance
 * Compiling, Training, and Evaluating the Original Model
-  * How many neurons, layers, and activation functions did you select for your neural network model, and why?
    * Number of Neurons: The first hidden layer (layer_1) contains 128 neurons, and the second hidden layer (layer_2) contains 64 neurons.
    * Number of Layers: The model consists of two hidden layers and one output layer, resulting in a total of three layers.
    * Activation Functions: Both hidden layers utilize the ReLU (Rectified Linear Unit) activation function, while the output layer employs the softmax activation function.

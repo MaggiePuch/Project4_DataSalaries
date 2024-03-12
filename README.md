@@ -21,7 +21,11 @@ https://public.tableau.com/app/profile/kevin.shaw5642/viz/Project4Book_171020214
 * Were you able to achieve the 75% or greater on your model?
   * No, we were not able to achieve an accuracy over 75%. Despite making several optimization attempts, the model's accuracy remained below the desired threshold. Our first attempts achieved an accuracy of approximately 42%. The optimization attempts yielded the following results: Optimization 1 - Loss: , Accuracy: . Optimization 2 - Loss: , Accuracy: . Optimization 3 - Loss: , Accuracy: . While the models showed improvement over time, they still did not reach the desired level of accuracy. 
 * What steps did you take in your attempts to increase model performance?
-  * UPDATE THIS In attempts to enhance model performance, we made several modifications. Initially, WHAT DID WE TRY? Attempted to NORMALIZE but didnt work ended up with 100% accuracy, over fit the model. Ran the FOREST(?) and got some results. Finally called it after attempted to use the unaltered 'salary' and received a 0.0000e00 accuracy.
+  * We atttempted to use multiple estimates , activation functions, and parameters with our machine learning models, as well as model optimizers.
+  * We tried used multiple scalers on our data.
+  * We modified the data to increase/decrease the number of columns used with the model.
+  
+    While we strived for increased performance with our modifications, the highest accuracy achieved was 60%. Which leads us to the conclusion that our dataset in it’s current state is unable to achieve the goal set out for our machine learning model.  
 
 ## Summary 
 In conclusion, while our model provides a foundation for predicting salaries in the data industry, we recognize the need for additional data to enhance its accuracy and robustness. Despite the dataset's size, we believe that the model's accuracy could be significantly improved with more granular and comprehensive data, particularly from specific states or regions. We found that the lack of data diversity may have led to bias and limited the model's ability to generalize well to unseen data. Future efforts will focus on acquiring more data, especially from specific states or regions, to better capture the variability in salaries within the data industry. We remain optimistic that with a more extensive and diverse dataset, our model can achieve higher accuracy and better serve its intended purpose of assisting individuals in understanding and negotiating salaries in the data field.

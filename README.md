@@ -1,6 +1,8 @@
 # Project4_DataSalaries
 ## Overview - Predicting Salaries in the Data Field
-The goal of this project is to predict the salaries of individuals entering the data field using machine learning techniques. The dataset used in this project, sourced from ai-jobs.net, contains comprehensive information about individuals working in the data domain, including their experience level, employment type, job title, salary, location, and company size. With over 13,000 rows of data, this dataset offers a rich source of insights into salary trends in the data field.
+The goal of this project is to predict the salaries of individuals entering the data field using machine learning techniques. The dataset used in this project, sourced from ai-jobs.net, contains comprehensive information about individuals working in the data domain, including their experience level, employment type, job title, salary, location, and company size. With over 13,000 rows of data, this dataset offers a rich source of insights into salary trends in the data field. Linked below is our website for our tableau visualizations. 
+
+https://public.tableau.com/app/profile/kevin.shaw5642/viz/Project4Book_17102021417060/Story1?publish=yes 
 
 ## Results - 
 * Data Preprocessing
